@@ -14,8 +14,7 @@ export const mastra = new Mastra({
   scorers: { toolCallAppropriatenessScorer, completenessScorer, translationScorer },
   storage: new LibSQLStore({
     id: "mastra-storage",
-    // stores observability, scores, ... into persistent file storage
-    url: "file:./mastra.db",
+    url: ":memory:",
   }),
   logger: new PinoLogger({
     name: 'Mastra',
